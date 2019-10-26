@@ -10,7 +10,7 @@ credentials: Credentials = storage.get()
 print(u"cred.to_json() = %s" % str(credentials.to_json()))
 
 http = credentials.authorize(httplib2.Http())
-credentials.refresh(http)
+# credentials.refresh(http)
 
 print(u"credentials.access_token = %s" % str())
 
