@@ -3,7 +3,9 @@ import requests
 from oauth2client.client import Credentials
 from oauth2client.file import Storage
 
-storage = Storage('/Users/arturgspb/PycharmProjects/garpun-auth-library-python/out.json')
+from garpun.auth import DEFAULT_CREDENTIALS
+
+storage = Storage(DEFAULT_CREDENTIALS)
 
 credentials: Credentials = storage.get()
 

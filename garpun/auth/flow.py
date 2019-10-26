@@ -2,7 +2,7 @@ from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 
 from garpun import GARPUN_AUTH_URI, GARPUN_TOKEN_URI, GARPUN_TOKEN_INFO_URI
-from garpun.auth import CLIENT_ID, CLIENT_SECRET
+from garpun.auth import CLIENT_ID, CLIENT_SECRET, DEFAULT_CREDENTIALS
 from oauth2client.tools import run_flow
 
 scopes = ['meta.metaql']
@@ -12,5 +12,5 @@ flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, " ".join(scopes),
                            token_info_uri=GARPUN_TOKEN_INFO_URI,
                            )
 
-storage = Storage('/Users/arturgspb/PycharmProjects/garpun-auth-library-python/out.json')
+storage = Storage(DEFAULT_CREDENTIALS)
 run_flow(flow, storage)
