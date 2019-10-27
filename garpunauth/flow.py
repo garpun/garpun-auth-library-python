@@ -3,8 +3,8 @@ from oauth2client.file import Storage
 
 from oauth2client.tools import run_flow
 
-from garpun.auth import GARPUN_AUTH_URI, GARPUN_TOKEN_URI, GARPUN_TOKEN_INFO_URI
-from garpun.auth._default import CLIENT_SECRET, _get_well_known_file, CLIENT_ID
+from garpunauth import GARPUN_AUTH_URI, GARPUN_TOKEN_URI, GARPUN_TOKEN_INFO_URI
+from garpunauth._default import CLIENT_SECRET, _get_well_known_file, CLIENT_ID
 
 
 def flow_authenticate(scopes, flags=None, http=None):

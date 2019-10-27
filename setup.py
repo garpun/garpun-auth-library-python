@@ -1,10 +1,9 @@
 #!/usr/bin/env python
-import os
 from os import path
 
 import setuptools
 
-from garpun.auth import info
+from garpunauth import info
 
 
 def parse_requirements(filename):
@@ -42,6 +41,6 @@ setuptools.setup(
     python_requires=">=3.6",
     packages=setuptools.find_packages(),
     package_data={'': ['LICENSE']},
-    namespace_packages=("garpun",),
+    namespace_packages=("garpunauth",),
     include_package_data=True,
 )

@@ -5,8 +5,8 @@ import datetime
 from oauth2client import _helpers
 from oauth2client.file import Storage
 
-from garpun.auth import GARPUN_TOKEN_URI, GARPUN_REVOKE_URI, GARPUN_TOKEN_INFO_URI
-from garpun.auth._default import _get_well_known_file
+from garpunauth import GARPUN_TOKEN_URI, GARPUN_REVOKE_URI
+from garpunauth._default import _get_well_known_file
 from oauth2client.client import OAuth2Credentials, EXPIRY_FORMAT
 
 
@@ -96,7 +96,7 @@ class GarpunCredentials(OAuth2Credentials):
                 return
 
         from argparse import Namespace
-        from garpun.auth.flow import flow_authenticate
+        from garpunauth.auth.flow import flow_authenticate
         if flags is None:
             flags = Namespace(noauth_local_webserver=True, logging_level="INFO")
         flow_authenticate(scopes=scopes, flags=flags)

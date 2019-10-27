@@ -1,0 +1,5 @@
+GARPUN_AUTH_URI = 'https://account.garpunauth.com/oauth2/authorize'
+GARPUN_TOKEN_URI = 'https://account.garpunauth.com/oauth2/token'
+GARPUN_DEVICE_URI = 'https://account.garpunauth.com/oauth2/device/code'
+GARPUN_REVOKE_URI = 'https://account.garpunauth.com/oauth2/revoke'
+GARPUN_TOKEN_INFO_URI = 'https://account.garpunauth.com/api/meta/v1/me'
