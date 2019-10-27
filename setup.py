@@ -39,8 +39,7 @@ setuptools.setup(
     ],
     install_requires=DEPENDENCIES,
     python_requires=">=3.6",
-    packages=setuptools.find_packages(),
+    packages=['garpunauth'],
     package_data={'': ['LICENSE']},
-    namespace_packages=("garpunauth",),
     include_package_data=True,
 )

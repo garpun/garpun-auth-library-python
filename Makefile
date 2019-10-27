@@ -1,4 +1,4 @@
-VERSION=$(shell python garpun/auth/info.py)
+VERSION=$(shell python garpunauth/info.py)
 
 init:
 	python3 -m pip install -r requirements.txt
