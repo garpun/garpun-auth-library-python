@@ -4,6 +4,8 @@ Garpun Auth Python Library
 This library simplifies using Garpun's various server-to-server authentication
 mechanisms to access Garpun APIs.
 
+`Google Auth
+<https://github.com/googleapis/google-auth-library-python>`_ library is taken as a basis.
 
 Supported Python Versions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
