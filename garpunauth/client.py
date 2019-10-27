@@ -96,7 +96,7 @@ class GarpunCredentials(OAuth2Credentials):
                 return
 
         from argparse import Namespace
-        from garpunauth.auth.flow import flow_authenticate
+        from garpunauth.flow import flow_authenticate
         if flags is None:
             flags = Namespace(noauth_local_webserver=True, logging_level="INFO")
         flow_authenticate(scopes=scopes, flags=flags)
