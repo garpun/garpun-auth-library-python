@@ -1,16 +1,18 @@
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 
-from garpun import GARPUN_AUTH_URI, GARPUN_TOKEN_URI, GARPUN_TOKEN_INFO_URI
-from garpun.auth import CLIENT_ID, CLIENT_SECRET, DEFAULT_CREDENTIALS
 from oauth2client.tools import run_flow
 
-scopes = ['meta.metaql']
-flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, " ".join(scopes),
-                           auth_uri=GARPUN_AUTH_URI,
-                           token_uri=GARPUN_TOKEN_URI,
-                           token_info_uri=GARPUN_TOKEN_INFO_URI,
-                           )
+from garpun.auth import GARPUN_AUTH_URI, GARPUN_TOKEN_URI, GARPUN_TOKEN_INFO_URI
+from garpun.auth._default import CLIENT_SECRET, _get_well_known_file, CLIENT_ID
 
-storage = Storage(DEFAULT_CREDENTIALS)
-run_flow(flow, storage)
+
+def flow_authenticate(scopes, flags=None, http=None):
+    flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, " ".join(scopes),
+                               auth_uri=GARPUN_AUTH_URI,
+                               token_uri=GARPUN_TOKEN_URI,
+                               token_info_uri=GARPUN_TOKEN_INFO_URI,
+                               )
+
+    storage = Storage(_get_well_known_file())
+    run_flow(flow, storage, flags=flags, http=http)
