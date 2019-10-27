@@ -1,4 +1,5 @@
-# Garpun Auth Python Library
+Garpun Auth Python Library
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This library simplifies using Garpun's various server-to-server authentication
 mechanisms to access Garpun APIs.
@@ -6,7 +7,7 @@ mechanisms to access Garpun APIs.
 
 Supported Python Versions
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Python >= 3.7
+Python >= 3.4
 
 
 Installing
