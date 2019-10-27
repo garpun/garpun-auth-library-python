@@ -17,7 +17,7 @@ Installing
 
 You can install using `pip`_::
 
-    $ pip install garpun-auth
+    $ pip install garpunauth
 
 .. _pip: https://pip.pypa.io/en/stable/
 
