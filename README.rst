@@ -53,6 +53,6 @@ For contributors
 ________________
 
 
-1. Use `make black` for blacken the code
+1. Use `make blacken` for blacken the code
 2. Use `nox` for run tests and other checks
 3. Set PyCharm default test runner to pytest

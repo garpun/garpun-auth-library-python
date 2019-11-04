@@ -34,7 +34,7 @@ setup(
         "Programming Language :: Python :: 3 :: Only",
     ],
     install_requires=DEPENDENCIES,
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     packages=["garpunauth"],
     package_data={"": ["LICENSE"]},
     include_package_data=True,
