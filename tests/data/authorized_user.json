@@ -1,0 +1,17 @@
+{
+  "client_id": "123",
+  "client_secret": "secret",
+  "token_type": "bearer",
+  "refresh_token": "alabalaportocala",
+  "access_token": "newaccess",
+  "token_expiry": "2019-11-04T09:04:21Z",
+  "token_uri": "https://account.garpun.com/oauth2/token",
+  "invalid": false,
+  "user_agent": null,
+  "revoke_uri": "https://accounts.google.com/o/oauth2/revoke",
+  "id_token": null,
+  "id_token_jwt": null,
+  "type": "authorized_user",
+  "_class": "OAuth2Credentials",
+  "_module": "oauth2client.client"
+}
