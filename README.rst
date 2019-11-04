@@ -35,18 +35,17 @@ _____
 .. code-block:: python
 
     # Use it for first auth with your scopes
-    GarpunCredentials.authenticate_user(['cloud-platform'])
+    from garpunauth.client import GarpunCredentials
 
-    # Get default credentials
-    credentials = GarpunCredentials.get_application_default()
+    credentials, project_id = GarpunCredentials.authenticate_user(['cloud-platform'])
+
     print(u"credentials.access_token = %s" % str(credentials.access_token))
     print(u"credentials.access_token_expired = %s" % str(credentials.access_token_expired))
     print(u"credentials.refresh_token = %s" % str(credentials.refresh_token))
 
     # Refresh access_token if it expired
-    import httplib2
-    http = credentials.authorize(httplib2.Http())
-    credentials.refresh(http)
+    GarpunCredentials.refresh_credentials(credentials)
+
     print(u"credentials.access_token = %s" % str(credentials.access_token))
 
 
