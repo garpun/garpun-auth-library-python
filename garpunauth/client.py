@@ -11,6 +11,7 @@ from garpunauth._default import _get_well_known_file
 from oauth2client.client import EXPIRY_FORMAT, OAuth2Credentials
 
 from garpunauth.exceptions import DefaultCredentialsError
+import logging
 
 
 class GarpunCredentials(OAuth2Credentials):
@@ -122,9 +123,12 @@ class GarpunCredentials(OAuth2Credentials):
         """Auth user with scopes. Auth not start if credentials already exist in storage"""
         project_id = None
         if not reauth:
-            creds, project_id = GarpunCredentials.get_application_default()
-            if creds and creds.scopes.intersection(scopes) == set(scopes):
-                return creds, None
+            try:
+                creds, project_id = GarpunCredentials.get_application_default()
+                if creds and creds.scopes.intersection(scopes) == set(scopes):
+                    return creds, None
+            except DefaultCredentialsError as e:
+                logging.info("Can't get local credentials", e)
 
         from argparse import Namespace
         from garpunauth.flow import flow_authenticate
@@ -164,3 +168,6 @@ class GarpunCredentials(OAuth2Credentials):
     def refresh_credentials(credentials):
         http = credentials.authorize(httplib2.Http())
         credentials.refresh(http)
+
+
+GarpunCredentials.authenticate_user(["meta.dev"])
