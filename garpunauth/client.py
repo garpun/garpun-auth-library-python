@@ -168,6 +168,3 @@ class GarpunCredentials(OAuth2Credentials):
     def refresh_credentials(credentials):
         http = credentials.authorize(httplib2.Http())
         credentials.refresh(http)
-
-
-GarpunCredentials.authenticate_user(["meta.dev"])
